@@ -1,0 +1,19 @@
+\section{Udstyr}
+\subsection{DSP}
+Som DSP til den aktive højtaler benyttes MiniDSP 2x4 HD \cite{dsp}. Det er et fiks lille modul bestående af en DSP og med 24 bit ADC/DAC opløsning. Den er drevet af en kraftig Sharc 400MHz floating point DSP og har mulighed for både IIR og FIR filtrering. Den har både parametriske EQ (IIR), Butterworth og Linkwitz-Riley crossovers, og mulighed for forsinkelse på hver af de 4 output kanaler. Alt skal tilgås og programmeres med miniDSPs forholdsvis brugervenlige plugin interface software.
+Som input kan der benyttes enten USB, toslink eller de 2 analoge inputs. Som output benyttes 4 analoge outputs, som kan føres direkte til forstærker.
+
+\subsection{Forstærker}
+Som forstærker benyttes SMSL SA-36A Plus\cite{amplifier}. Det  er forholds lille og billig HIFI Audio Class D forstærker, med et væld af input muligheder. Den kan levere 2x30W ved 4 Ohm og benytter sig af Texas Instruments TPA3118 amplifier IC.
+Da projeket er et stereo setup benyttes der 2x SMSL SA-36A Plus, en til højre og en til venstre højtaler.  
+
+
+\subsection{Mikrofon}
+Som mikrofon  benyttes MiniDSP UMIK-1 \cite{mikrofon} til de akustiske målinger i projektet. Mikrofonen er kalibreret målemikrofon med class-1 USB-tilslutning og  plug-and-play uden brug af forforstærkere eller ekstra lydkort. 
+
+Mikrofonen er kalibreret med en unik kalibreringsfil baseret på serienummeret. Dette sikrer en nøjagtig måling, da hver enkelt mikrofon er udmålt på fabrikken, og kalibreringsfilen korrigerer for de variationer, der er fra mikrofon til mikrofon. Frekvensresponsen for mikrofonen er fra $ 20Hz - 20kHz \pm1dB $ når kalibreringsfilen er indlæst. Den har 24 bit opløsning og en sampling frekvens på 48 kHz i mikrofonens interne ADC.
+
+Der kan benyttes man mange forskellige typer af målesoftware grundet mikrofonens USB-tilslutning, dog foretrækkes gratisprogrammet Room EQ Wizard (REW) da mikrofonen er udviklet til at fungere optimalt med dette program. Rumakustik analyse-softwareprogrammet REW bruges til måling og analyse af rum- og højtalerrespons og indeholder blandt andet værktøjer til generering af lydtestsignaler, kaliberet SPL måling, generering af realtidsanalysator (RTA) plots og osv. 
+
+Målingerne af frekvensreposer foregik  det lyddøde rum i AUDIO Lab, så  refleksioner og fra andet end selve måleobjektet og støj fra omgivelserne ikke ville påvirke målingerne.
+

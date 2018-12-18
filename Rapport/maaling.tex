@@ -1,0 +1,134 @@
+\section{Måling}
+
+\subsection{Udstyr}
+Som målemikrofon til de akustiske målinger benyttes MiniDSP UMIK-1. Det er en kalibreret målemikrofon med USB-tilslutning og med talrige anvendelsesmuligheder. Mikrofonen er et class-1 USB-produkt, og er plug-and-play til en PC. Derfor kræves der altså ikke separate mikrofon-forforstærkere eller andet ekstra-udstyr. Mikrofonen tilsluttes blot med USB til en PC, og så er den klar til målinger.
+
+Den er forsynet med en unik kalibreringsfil baseret på serienummeret, for at sikre en nøjagtig måling. Hver enkelt mikrofon er udmålt på fabrikken, og kalibreringsfilen korrigerer for de variationer, der er fra mikrofon til mikrofon. Mikrofonen har en frekvensrespons fra $ 20Hz - 20kHz \pm1dB $ når kalibreringsfilen er indlæst. Opløsning er 24 bit og sampling frekvensen 48 kHz i mikrofonens interne ADC.
+
+Mikrofonen kan bruges med mange forskellige typer af software grundet dens USB-tilslutning, men den er udviklet til at fungere optimalt med gratisprogrammet Room EQ Wizard. REW er et rumakustik analyse-softwareprogram til måling og analyse af rum- og højtalerrespons. Programmet indeholder blandt andet værktøjer til generering af lydtestsignaler, kaliberet SPL måling, generering af realtidsanalysator (RTA) plots og meget mere. Derfor benyttes REW også som måleværktøj i dette projekt, da det er gratis, simpelt at gå til og ikke kræver den helt store erfaring med programmet. 
+
+\subsection{Opstilling}
+Selve målingen forgik i det lyddøde rum i AUDIO Lab, for ikke at blive påvirket af refleksioner fra andet end selve måleobjektet og samtidig eliminere støj fra omgivelserne.  Måleopstillingen kan ses i \autoref{fig:opstilling1} og \autoref{fig:opstilling2}. Ved hver måling blev det lyddøde rum forladt og lukket til mens målingen forgik. Mikrofonen var placeret i samme højde som diskantenheden for at omgå den begrænsede vertikale spredning hos en ribbon tweeter og derfor blot måle direkte på den horisontale akses spredning af lyden. 
+
+\begin{figure}[H] 
+	\begin{center}
+		\includegraphics[width=.75\linewidth]{figur/test0.jpg}\quad
+		\caption{Måleopstilling i AUDIO Lab}
+		\label{fig:opstilling1}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H] 
+	\begin{center}
+		\includegraphics[width=.75\linewidth]{figur/Opstilling2.png}\quad
+		\caption{Opstilling i AUDIO Lab}
+		\label{fig:opstilling2}
+	\end{center}
+\end{figure}
+
+For at se forskellen på højtaleropstilling med henholdsvis, lukket tweeter bagside, åben tweeter bagside, cirkulær konveks reflektor, cirkulær konkav reflektor og ret trekants reflektor, blev frekvensresponset målt for hver af de 5 reflektoropstillinger med hver deres sinus sweep. Der blev målt i 11 positioner med de 5 forskellige reflektor-opstillinger. Hver position var enten 1 meter eller 2 meter fra højtaler forside bafflen.  Dernæst var positionerne $0^{\circ}$, $15 ^{\circ}$, $30 ^{\circ}$, $ 45 ^{\circ}$ og $ 60 ^{\circ} $ fra højtaleraksen. Der blev kun målt ved $90 ^{\circ}$ ved 1 meters afstand, da rummet blev for lille til at måle med 2 meter i afstand ved $90 ^{\circ}$ uden at flytte måle objektet. Ved hver position blev alle 5 reflektor-opstillinger målt færdigt inden, mikrofonen blev flyttet videre til næste position, for at undgå eventuelle placerings eller retningsfejl imellem reflektoropstillinger for hver position.
+
+\subsection{Resultater}
+I dette afsnit beskrives resultaterne af målingerne ved udvalgte plots, samt en mere subjektiv beskrivelse af lytteoplevelsen. 
+Samtlige målinger er at finde i bilagene, hvor de er plottet sammen for hver position. 
+\begin{figure}[H]
+\makebox[\textwidth]{%
+        \includegraphics[width=1.2\linewidth]{figur/resultater/1m_90grader_open_close.png}
+    }
+    \caption{Måling af Åben og Lukket, Afstand $= 1m$, vinkel $= 90 ^{\circ}$ }
+    \label{fig:1m_90grader_open_close}
+\end{figure}
+
+På \autoref{fig:1m_90grader_open_close} ses frekvensgangen for lukket og åben bagside på diskantenheden.
+Målingerne er lavet med en afstand på $1m$ og en vinkel på $90 ^{\circ}$.
+Det ses, at kurverne er tilnærmelsesvist ens, indtil ca. $2 kHz$.
+I begge tilfælde falder lydtrykniveauet for de høje frekvenser. 
+Med lukket bagside falder lydtrykniveauet med ca. $ 10 dB $  pr. oktav fra $4 kHz$.
+Kurven for åben bagside er meget mere ujævn, og der ses rippler i området $4kHz - 10 kHz$.
+Desuden er der især en stor dæmpning ved $5 kHz$.
+
+\begin{figure}[H]
+\makebox[\textwidth]{%
+        \includegraphics[width=1.2\linewidth]{figur/resultater/1m_90grader_close_cirkel.png}
+    }
+    \caption{Måling af Konveks cirkelbue og Lukket, Afstand $= 1m$, vinkel $= 90 ^{\circ}$ }
+    \label{fig:1m_90grader_close_cirkel}
+\end{figure} 
+
+På \autoref{fig:1m_90grader_close_cirkel} ses frekvensgangen for konveks cirkelbue og lukket bagside på diskantenheden.
+Målingerne er lavet med en afstand på $1m$ og en vinkel på $90 ^{\circ}$.
+Det ses, at ved indsættelse af en reflektor med konveks cirkelbue, opnås en anden karakteristik. 
+Lavfrekvent er der ikke stor forskel, men over $2 kHz$ opstår der flere tydelige frekvensafhængige interferenser.
+Især ved $4 kHz$ er der en destruktiv interferens, som dæmper markant. 
+Det ses også, at den ripple, der er mellem $5kHz$ og $15kHz$, har toppe og dale modsat signalet fra den lukkede. 
+
+\begin{figure}[H]
+\makebox[\textwidth]{%
+        \includegraphics[width=1.2\linewidth]{figur/resultater/1m_90grader_close_trekant_exp.png}
+    }
+    \caption{Måling af konkav cirkelbue, ret trekant og lukket, Afstand $= 1m$, vinkel $= 90 ^{\circ}$ }
+    \label{fig:1m_90grader_close_trekant_exp}
+\end{figure} 
+
+På \autoref{fig:1m_90grader_close_trekant_exp} ses frekvensgangen for konkav og lige reflektor, samt lukket bagside på diskantenheden.
+Målingerne er lavet med en afstand på $1m$ og en vinkel på $90 ^{\circ}$.
+Igen ses det, at kurverne er ens op til ca. $2 kHz$.
+Det ses, at både den lige og den konkave reflektor danner ripple fra ca. $2 kHz$, dog er interferensen modsat rettet mellem dem. 
+Fra $6 kHz$ og op bidrager reflektorerne med markant mere diskant lyd. Ved $8 kHz$ og op er dette cirka $15dB \pm5dB$ boost i diskant.
+For begge reflektorer topper bidraget  mellem $9 $ og $ 13 kHz$.
+
+\begin{figure}[H]
+\makebox[\textwidth]{%
+        \includegraphics[width=1.2\linewidth]{figur/resultater/1m_trekant.png}
+    }
+    \caption{Måling af ret trekant, Afstand $= 1m$, vinkel $= 0 $ til $90 ^{\circ}$ }
+    \label{fig:1m_trekant}
+\end{figure} 
+
+På \autoref{fig:1m_trekant} ses frekvensgangen for den lige reflektor i alle de målte vinkler.
+Målingerne er lavet med en afstand på $1m$. 
+Det ses tydeligt at karakteristikken for vinklerne i $0 - 60^{\circ}$ er forholdsvist ens.
+For frekvenser under $130 Hz$ er der ikke synlig forskel på kurverne, bortset fra $90 ^{\circ}$, der er dæmpet, men følger samme karakteristik. 
+Forskellene på kurverne ses ved de højeste frekvenser. 
+Ved $15 ^{\circ}$ falder lydtrykniveauet fra $13 kHz$, ved $30 ^{\circ}$ fra $9 kHz$, ved $45 ^{\circ}$ fra $7 kHz$ og $60 ^{\circ}$ fra $4 kHz$.
+Ved vinklen på $ 90 ^{\circ}$ falder niveauet ved $2 kHz$, men stiger så igen fra $7 kHz$, dog med betydelig ripple. 
+
+\begin{figure}[H]
+\makebox[\textwidth]{%
+        \includegraphics[width=1.2\linewidth]{figur/resultater/1m_0grader_bas.png}
+    }
+    \caption{Plot af forskellige målinger, lavfrekvent del. Afstand $= 1m$, vinkel $= 90 ^{\circ}$ }
+    \label{fig:1m_0grader_bas}
+\end{figure} 
+
+På \autoref{fig:1m_0grader_bas} ses det, at lydtrykniveauet fra $100 $ til $50 Hz$ falder med ca. $12 dB$, som forventet. 
+Cutoff-frekvensen ligger som forventet ved $100 Hz$, hvor niveauet er $3 dB$ lavere end den stationære værdi. 
+Karakteristikken stemmer overens med det designede Butterworth respons.  
+
+\subsubsection{Lytteoplevelse}
+
+Ved musiklytning inde i det lyddøde rum kunne der subjektivt godt høres forskel på de 5 forskellige reflektoropstillinger.Herunder er følgende vurderinger for hver reflektor-opstilling:
+
+\textbf{Lukket bagside} \newline
+Generelt blev lyden spredt meget med den lukkede bagside på tweeteren, så der forsvandt først væsentlig diskant ved ca. $45 ^{\circ}$ fra højtaleraksen. Dette giver god mening, idet både ribbon og planar ribbon tweeter generelt har en god vertikal spredning af lyden grundet deres opbygning. 
+ 
+\textbf{Åben bagside}\newline
+Med den åbne bagside af tweeteren skete der en hørbar forskel i volumen generelt. Det største diskant boost skete ved $45 ^{\circ}$ fra højtaleraksen. Dog var dette diskantboost stort set væk ved $90 ^{\circ}$ fra højtaleraksen, hvilket giver mening, idet de bagud vente diskantbølger jo stod vinkelret på denne lytteposition. Den åbne bagside gav dog lidt mere mudret lyd, da diskanten ikke stod så klart som før, formentlig grundet de mange stående bølger mellem de to plader.
+
+\textbf{Konveks cirkelbue reflektor}\newline
+Ved den konvekse cirkelbue reflektor var der kun en lille hørbar forskel af diskant ved $90 ^{\circ}$ fra højtaleraksen. Den største forskel var at denne reflektor gav et større diskantbidrag ved omkring $60 ^{\circ}$ end de andre reflektoropstillinger. 
+
+\textbf{Konkav cirkelbue reflektor}\newline
+Ved den konkave cirkelbue reflektor var der en stor diskant forskel ved $90 ^{\circ}$ fra højtaleraksen. Det var næsten for meget diskant dominans, da bassen faldt meget i baggrunden. Diskanten forsvandt en del omkring $45-60 ^{\circ}$ fra højtaleraksen, som gav et hul mellem diskantzonerne fra forsidens direkte og bagsidens reflekterede lyd. Men ellers havde denne reflektor generelt bløde overgange mellem diskantzonerne, men med lidt mudret lyd.
+
+\textbf{Ret trekant reflekter}\newline
+Den rette trekant reflektor gav et hørbart diskantboost ved $90 ^{\circ}$ fra højtaleraksen. Dette passer fint med at denne reflektor i teorien burde reflektere alle de bagud-vendte lydstråler $90 ^{\circ}$ til hver side, da indfaldsvinklen og udfaldsvinklen af lyden på trekantens sider er $45 ^{\circ}$. Diskanten havde et lille dyk ved omkring $60 ^{\circ}$ fra højtaleraksen, som tydeliggjorde et hul mellem diskantzonerne fra forsiden direkte og bagside reflekterede lyd. Disse diskantzoner for den rette trekant reflektor-opstilling er forsøgt skitseret i \autoref{fig:Oplevelse}. Dog bevarede denne reflektoropstilling mere klarhed i diskanten end de andre reflektor-opstillinger, og er derfor den subjektive lytteoplevelsesvinder.
+
+\begin{figure}[H] 
+	\begin{center}
+		\includegraphics[width=.75\linewidth]{figur/Oplevelse.png}\quad
+		\caption{Lytteoplevelsen af diskantzonerne i AUDIO Lab for den rette trekant reflektoropstilling}
+		\label{fig:Oplevelse}
+	\end{center}
+\end{figure}
+
