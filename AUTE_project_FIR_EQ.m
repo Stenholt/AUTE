@@ -4,13 +4,12 @@ close all
 clc;
 
 Fs=44100;
-order = 1024;
+taps = 1024;
 
 % EQ Frequency axix
 f = [0 20 25 31 40 50 60 80 100 125 160 200 250 315 400 500 630 800 1000 1250 1600 2000 2500 3150 4000 5000 6300 8000 10000 12500 16000 20000 Fs];
 f_matlab = [0 20 25 31 40 50 60 80 100 125 160 200 250 315 400 500 630 800 1000 1250 1600 2000 2500 3150 4000 5000 6300 8000 10000 12500 16000 20000 Fs/2];
 %normaliseret frekvens
-
 
 %normaliseret frekvens
 fn = f/Fs;
@@ -29,14 +28,11 @@ EQ(11:15)=boost6; %160-400
 EQ(17:18)=boost6; %630-800
 EQ(22:26)=boost3; % 2000-5000
 EQ(28:29)=boost3; % 8000-10000
-%EQ(12:13)=2; %160-400
 
-
-
-b = fir2(order, fn,EQ);
+b = fir2(taps, fn,EQ);
 h = b;
 
-b_matlab = fir2(order, fn_matlab, EQ);
+b_matlab = fir2(taps, fn_matlab, EQ);
 
 [H, f_vector] = freqz(b_matlab,1,20000, Fs);
 
@@ -45,13 +41,13 @@ Hdb = 20*log10(abs(H));
 semilogx(f_vector, Hdb);
 grid on
 axis([20 20000 -9 9])
-title('Amplitudespektrum Fir filter jazz');
+title('Amplitudespektrum FIR filter Jazz');
 xlabel('Frequency (Hz)');
 ylabel('Magnitude (dB)');
 
-figure
-freqz(b_matlab, 1, 20000, Fs);
-title('Amplitudespektrum Fir filter jazz');
+% figure
+% freqz(b_matlab, 1, 20000, Fs);
+% title('Amplitudespektrum FIR filter Jazz');
 for c = 1:length(h)
     Jazz_tekstfil(c) = h(c)+",";
 end
@@ -68,11 +64,10 @@ EQ(25:26)=boost6; %4000-5000
 EQ(28:29)=boost6; % 8000-10000
 EQ(29:end)=boost3; % 10000-end
 
-
-b = fir2(order, fn,EQ);
+b = fir2(taps, fn,EQ);
 h = b;
 
-b_matlab = fir2(order, fn_matlab, EQ);
+b_matlab = fir2(taps, fn_matlab, EQ);
 
 [H, f_vector] = freqz(b_matlab,1,20000, Fs);
 
@@ -81,13 +76,13 @@ Hdb = 20*log10(abs(H));
 semilogx(f_vector, Hdb);
 grid on
 axis([20 20000 -9 9])
-title('Amplitudespektrum Fir filter Rock');
+title('Amplitudespektrum Fir Filter Rock');
 xlabel('Frequency (Hz)');
 ylabel('Magnitude (dB)');
 
-figure
-freqz(b_matlab, 1, 20000, Fs);
-title('Amplitudespektrum Fir filter Rock');
+% figure
+% freqz(b_matlab, 1, 20000, Fs);
+% title('Amplitudespektrum Fir filter Rock');
 for c = 1:length(h)
     Rock_tekstfil(c) = h(c)+",";
 end
