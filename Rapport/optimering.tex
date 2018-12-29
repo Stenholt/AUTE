@@ -120,13 +120,19 @@ I \autoref{fig:FIR-Jazz1} ses det at bassen generelt bliver dæmpet og ligeledes
 Filteret i \autoref{fig:FIR-Jazz2} stemmer meget overens med Matlab versionen. Der er kun få ændringer i skarpheden af filtret omkring 50-60Hz, som MiniDSP'en ikke har kunne realisere præcist som forventet  Generelt set stiger det overordnede lydtryk også igen med cirka 2-3dB samlet set. Dette gør, at hele input signalet på MiniDSP'en skal sænkes cirka 3dB, hvis man skal kunne sammenligne denne konfiguration (config 4) med den normale optimerede konfiguration (config 2) rent lydtryksmæssig. Derfor dæmpes indputtes på config 4 med også med 3dB, så config 4 har omtrent samme lydtryk under lyttetesten som config 2.  
 
 \subsubsection{Resultat}
+For at sammenligne config 2 (Optimeret ), config 3 (Rock) og config 4(Jazz) måles frekvensresponsen for stereo setuppet i det lyddøde rum i 1 meters afstand. Det er ikke den helt optimale målemetode, da det er svært at placere mikrofonen præcist lige langt mellem de nu 2 diskantenheder(og lige langt mellem basenhederne), hvormed der i denne måling opstår en destruktiv interferens omkring 7-8kHz svarende til 2-3cm i afstandsforskel til mikrofonen. Dette betyder dog ikke noget for selve sammenligningen mellem de 3 konfigurationer, da denne interferens skabes ved alle 3 målinger. Derfor viser forskellen mellem de tre målinger blot forskellen mellem de 3 konfigurationer, som vi netop er interesseret i at sammenligne. Resultatet kan ses i \autoref{fig:EQ-forskelle} herunder.
+
 
 \begin{figure}[H]
 	\center
 	\includegraphics[width=1\textwidth]{figur/EQ-forskelle}
-	\caption{Frekvenskarakterstik for config 2, config 3 og config 4}
+	\caption{Frekvenskarakterstik for stereo opsætning for henholdsvis (Rød) config 2, (Grøn) config 3 og (Blå) config 4}
 	\label{fig:EQ-forskelle}
 \end{figure}
+
+Som det kan ses i \autoref{fig:EQ-forskelle} så opfører de 3 konfigurationer sig som forventet. Den grønne kurve for Rock giver mere kraft i  bas-båndet mellem 40Hz og 300 Hz, dæmper low-mid båndet omkring 400Hz og hæver flere høje toner for at fremhæve de ønskede instrumenter. Den blå kurve for Jazz dæmper bassen under 100 Hz, forstærker både lidt i det høje bas bånd fra 160-300Hz og i low-mid båndet fra 600-800Hz. Den blå kurve for Jazz dæmper faktisk også de aller højeste toner, hvilket ikke skyldes selve EQ filteret, men derimod den overordnende niveaujustering på -3dB på inputsignalet. 
+
+Så generelt ser resultatet i frekvensresponsen ud som forventet og ønsket, men det virkelige interessante bliver, hvordan resultatet af lyttetesten ser ud for selve oplevelsen af de 3 konfigurationer.     
 
 
 
